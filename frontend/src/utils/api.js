@@ -1,11 +1,10 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: 'https://smartcart-backend-rs8z.onrender.com/api',
   headers: { 'Content-Type': 'application/json' },
 })
 
-// Attach token if available
 api.interceptors.request.use((config) => {
   try {
     const user = JSON.parse(localStorage.getItem('smartcart_user'))
